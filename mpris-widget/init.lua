@@ -140,10 +140,8 @@ local function worker()
         player_status = words[1]
         artist = words[2]
         current_song = words[3]
-        if current_song ~= nil then
-            if string.len(current_song) > 18 then
-                current_song = string.sub(current_song, 0, 9) .. ".."
-            end
+        if current_song ~= nil and string.len(current_song) > 30 then
+            current_song = string.sub(current_song, 0, 30) .. ".."
         end
 
         if player_status == "Playing" then
